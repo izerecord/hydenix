@@ -2,11 +2,10 @@
 
 {
   imports = [
-    # ./example.nix - add your modules here
+    ./packages.nix
   ];
 
-  environment.systemPackages = [
-    # pkgs.vscode - hydenix's vscode version
-    # pkgs.userPkgs.vscode - your personal nixpkgs version
-  ];
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
 }
